@@ -1,0 +1,50 @@
+{
+  "doctype": "DocType",
+  "name": "Meal Item",
+  "module": "Fitness Management",
+  "istable": 1,
+  "fields": [
+    {
+      "fieldname": "meal_time",
+      "label": "Meal Time",
+      "fieldtype": "Select",
+      "options": "Breakfast\nLunch\nDinner\nSnack\nPre-Workout\nPost-Workout",
+      "reqd": 1
+    },
+    {
+      "fieldname": "meal_name",
+      "label": "Meal Name",
+      "fieldtype": "Data",
+      "reqd": 1
+    },
+    {
+      "fieldname": "description",
+      "label": "Description",
+      "fieldtype": "Small Text"
+    },
+    {
+      "fieldname": "calories",
+      "label": "Calories",
+      "fieldtype": "Int",
+      "reqd": 1
+    },
+    {
+      "fieldname": "protein_g",
+      "label": "Protein (g)",
+      "fieldtype": "Float",
+      "reqd": 1
+    },
+    {
+      "fieldname": "carbs_g",
+      "label": "Carbs (g)",
+      "fieldtype": "Float",
+      "reqd": 1
+    },
+    {
+      "fieldname": "fat_g",
+      "label": "Fat (g)",
+      "fieldtype": "Float",
+      "reqd": 1
+    }
+  ]
+}

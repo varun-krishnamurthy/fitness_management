@@ -1,0 +1,43 @@
+{
+  "doctype": "DocType",
+  "name": "Exercise Log",
+  "module": "Fitness Management",
+  "istable": 1,
+  "fields": [
+    {
+      "fieldname": "exercise_name",
+      "label": "Exercise Name",
+      "fieldtype": "Data",
+      "reqd": 1
+    },
+    {
+      "fieldname": "sets_completed",
+      "label": "Sets Completed",
+      "fieldtype": "Int",
+      "reqd": 1
+    },
+    {
+      "fieldname": "reps_completed",
+      "label": "Reps Completed",
+      "fieldtype": "Int",
+      "reqd": 1
+    },
+    {
+      "fieldname": "weight_used",
+      "label": "Weight Used (kg)",
+      "fieldtype": "Float"
+    },
+    {
+      "fieldname": "rpe",
+      "label": "RPE (1-10 Scale)",
+      "fieldtype": "Int",
+      "description": "Rate of Perceived Exertion",
+      "default": 5
+    },
+    {
+      "fieldname": "notes",
+      "label": "Notes",
+      "fieldtype": "Small Text"
+    }
+  ]
+}

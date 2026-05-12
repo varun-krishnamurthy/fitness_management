@@ -1,0 +1,120 @@
+{
+  "doctype": "DocType",
+  "name": "Diet Log",
+  "module": "Fitness Management",
+  "autoname": "DL-.YYYY.-",
+  "is_submittable": 1,
+  "title_field": "log_date",
+  "search_fields": "client_name, log_date",
+  "fields": [
+    {
+      "fieldname": "log_date",
+      "label": "Log Date",
+      "fieldtype": "Date",
+      "reqd": 1,
+      "default": "Today"
+    },
+    {
+      "fieldname": "client",
+      "label": "Client",
+      "fieldtype": "Link",
+      "options": "Customer",
+      "reqd": 1
+    },
+    {
+      "fieldname": "client_name",
+      "label": "Client Name",
+      "fieldtype": "Data",
+      "fetch_from": "customer.customer_name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "trainer",
+      "label": "Trainer",
+      "fieldtype": "Link",
+      "options": "Employee",
+      "reqd": 1,
+      "filters": "[[\"is_fitness_trainer\", \"=\", 1]]"
+    },
+    {
+      "fieldname": "trainer_name",
+      "label": "Trainer Name",
+      "fieldtype": "Data",
+      "fetch_from": "trainer.employee_name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "diet_plan",
+      "label": "Diet Plan",
+      "fieldtype": "Link",
+      "options": "Diet Plan"
+    },
+    {
+      "fieldname": "meals_consumed",
+      "label": "Meals Consumed",
+      "fieldtype": "Table",
+      "options": "Meal Log",
+      "reqd": 1
+    },
+    {
+      "fieldname": "total_calories",
+      "label": "Total Calories",
+      "fieldtype": "Int",
+      "read_only": 1
+    },
+    {
+      "fieldname": "total_protein_g",
+      "label": "Total Protein (g)",
+      "fieldtype": "Float",
+      "read_only": 1
+    },
+    {
+      "fieldname": "total_carbs_g",
+      "label": "Total Carbs (g)",
+      "fieldtype": "Float",
+      "read_only": 1
+    },
+    {
+      "fieldname": "total_fat_g",
+      "label": "Total Fat (g)",
+      "fieldtype": "Float",
+      "read_only": 1
+    },
+    {
+      "fieldname": "client_notes",
+      "label": "Client Notes",
+      "fieldtype": "Small Text"
+    },
+    {
+      "fieldname": "trainer_feedback",
+      "label": "Trainer Feedback",
+      "fieldtype": "Small Text"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1,
+      "cancel": 1
+    },
+    {
+      "role": "Fitness Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "submit": 1,
+      "cancel": 1
+    },
+    {
+      "role": "Fitness Trainer",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "submit": 1
+    }
+  ]
+}

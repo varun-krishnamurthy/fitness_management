@@ -1,0 +1,127 @@
+{
+  "doctype": "DocType",
+  "name": "Payment Transaction",
+  "module": "Fitness Management",
+  "autoname": "PTTXN-.YYYY.-",
+  "is_submittable": 1,
+  "title_field": "transaction_id",
+  "search_fields": "transaction_id, client_name, package_name",
+  "fields": [
+    {
+      "fieldname": "transaction_id",
+      "label": "Transaction ID",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "unique": 1
+    },
+    {
+      "fieldname": "client",
+      "label": "Client",
+      "fieldtype": "Link",
+      "options": "Customer",
+      "reqd": 1
+    },
+    {
+      "fieldname": "client_name",
+      "label": "Client Name",
+      "fieldtype": "Data",
+      "fetch_from": "customer.customer_name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "package",
+      "label": "Package",
+      "fieldtype": "Link",
+      "options": "Personal Training Package"
+    },
+    {
+      "fieldname": "package_name",
+      "label": "Package Name",
+      "fieldtype": "Data",
+      "fetch_from": "personal_training_package.package_name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "amount",
+      "label": "Amount",
+      "fieldtype": "Currency",
+      "reqd": 1
+    },
+    {
+      "fieldname": "currency",
+      "label": "Currency",
+      "fieldtype": "Link",
+      "options": "Currency",
+      "default": "INR"
+    },
+    {
+      "fieldname": "payment_gateway",
+      "label": "Payment Gateway",
+      "fieldtype": "Select",
+      "options": "Razorpay\nStripe\nPayPal\nManual",
+      "default": "Razorpay"
+    },
+    {
+      "fieldname": "gateway_transaction_id",
+      "label": "Gateway Transaction ID",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "payment_date",
+      "label": "Payment Date",
+      "fieldtype": "Datetime",
+      "reqd": 1,
+      "default": "Now"
+    },
+    {
+      "fieldname": "status",
+      "label": "Status",
+      "fieldtype": "Select",
+      "options": "Pending\nSuccess\nFailed\nRefunded",
+      "default": "Pending"
+    },
+    {
+      "fieldname": "payment_method",
+      "label": "Payment Method",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "invoice",
+      "label": "Invoice",
+      "fieldtype": "Link",
+      "options": "Sales Invoice"
+    },
+    {
+      "fieldname": "notes",
+      "label": "Notes",
+      "fieldtype": "Small Text"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1,
+      "cancel": 1
+    },
+    {
+      "role": "Fitness Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "submit": 1,
+      "cancel": 1
+    },
+    {
+      "role": "Accounts Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "submit": 1,
+      "cancel": 1
+    }
+  ]
+}

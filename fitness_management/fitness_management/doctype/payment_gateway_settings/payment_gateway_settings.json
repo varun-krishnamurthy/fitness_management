@@ -1,0 +1,64 @@
+{
+  "doctype": "DocType",
+  "name": "Payment Gateway Settings",
+  "module": "Fitness Management",
+  "issingle": 1,
+  "autoname": "settings",
+  "fields": [
+    {
+      "fieldname": "gateway_name",
+      "label": "Gateway Name",
+      "fieldtype": "Select",
+      "options": "Razorpay\nStripe\nPayPal",
+      "reqd": 1,
+      "default": "Razorpay"
+    },
+    {
+      "fieldname": "api_key",
+      "label": "API Key",
+      "fieldtype": "Password",
+      "reqd": 1
+    },
+    {
+      "fieldname": "api_secret",
+      "label": "API Secret",
+      "fieldtype": "Password",
+      "reqd": 1
+    },
+    {
+      "fieldname": "webhook_secret",
+      "label": "Webhook Secret",
+      "fieldtype": "Password"
+    },
+    {
+      "fieldname": "is_active",
+      "label": "Is Active",
+      "fieldtype": "Check",
+      "default": 1
+    },
+    {
+      "fieldname": "test_mode",
+      "label": "Test Mode",
+      "fieldtype": "Check",
+      "default": 1,
+      "description": "Enable test mode for the payment gateway (use test credentials)"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1,
+      "cancel": 1,
+      "amend": 1
+    },
+    {
+      "role": "Fitness Manager",
+      "read": 1,
+      "write": 1
+    }
+  ]
+}
