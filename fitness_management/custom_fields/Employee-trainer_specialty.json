@@ -1,0 +1,8 @@
+{
+    "doctype": "Custom Field",
+    "dt": "Employee",
+    "fieldname": "trainer_specialty",
+    "label": "Trainer Specialty",
+    "fieldtype": "Select",
+    "options": "Strength Training\nYoga\nCardio\nRehabilitation\nPilates\nCrossFit\nBodybuilding\nPowerlifting"
+}

@@ -1,0 +1,7 @@
+{
+    "doctype": "Custom Field",
+    "dt": "Customer",
+    "fieldname": "emergency_contact",
+    "label": "Emergency Contact",
+    "fieldtype": "Data"
+}

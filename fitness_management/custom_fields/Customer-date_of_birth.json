@@ -1,0 +1,7 @@
+{
+    "doctype": "Custom Field",
+    "dt": "Customer",
+    "fieldname": "date_of_birth",
+    "label": "Date of Birth",
+    "fieldtype": "Date"
+}

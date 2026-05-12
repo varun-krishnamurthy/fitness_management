@@ -1,0 +1,7 @@
+{
+    "doctype": "Custom Field",
+    "dt": "Customer",
+    "fieldname": "fitness_goals",
+    "label": "Fitness Goals",
+    "fieldtype": "Small Text"
+}

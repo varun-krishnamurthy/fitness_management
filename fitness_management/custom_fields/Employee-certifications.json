@@ -1,0 +1,7 @@
+{
+    "doctype": "Custom Field",
+    "dt": "Employee",
+    "fieldname": "certifications",
+    "label": "Certifications",
+    "fieldtype": "Small Text"
+}

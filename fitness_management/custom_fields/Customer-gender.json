@@ -1,0 +1,8 @@
+{
+    "doctype": "Custom Field",
+    "dt": "Customer",
+    "fieldname": "gender",
+    "label": "Gender",
+    "fieldtype": "Select",
+    "options": "Male\nFemale\nOther"
+}

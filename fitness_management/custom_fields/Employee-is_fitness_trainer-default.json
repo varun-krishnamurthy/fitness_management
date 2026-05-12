@@ -1,0 +1,9 @@
+{
+    "doctype": "Property Setter",
+    "name": "Employee-is_fitness_trainer-default",
+    "doc_type": "Employee",
+    "field_name": "is_fitness_trainer",
+    "property": "default",
+    "property_type": "Check",
+    "value": "0"
+}

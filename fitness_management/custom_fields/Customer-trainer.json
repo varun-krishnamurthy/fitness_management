@@ -1,0 +1,10 @@
+{
+    "doctype": "Custom Field",
+    "dt": "Customer",
+    "fieldname": "trainer",
+    "label": "Trainer",
+    "fieldtype": "Link",
+    "options": "Employee",
+    "fetch_if_empty": 1,
+    "filters": "[[\"is_fitness_trainer\", \"=\", \"1\"]]"
+}

@@ -1,0 +1,9 @@
+{
+    "doctype": "Property Setter",
+    "name": "Customer-trainer-read_only",
+    "doc_type": "Customer",
+    "field_name": "trainer",
+    "property": "read_only",
+    "property_type": "Check",
+    "value": "1"
+}

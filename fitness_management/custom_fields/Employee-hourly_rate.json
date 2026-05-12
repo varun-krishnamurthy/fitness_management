@@ -1,0 +1,7 @@
+{
+    "doctype": "Custom Field",
+    "dt": "Employee",
+    "fieldname": "hourly_rate",
+    "label": "Hourly Rate",
+    "fieldtype": "Currency"
+}

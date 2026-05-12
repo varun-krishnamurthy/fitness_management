@@ -1,0 +1,8 @@
+{
+    "doctype": "Custom Field",
+    "dt": "Employee",
+    "fieldname": "is_fitness_trainer",
+    "label": "Is Fitness Trainer",
+    "fieldtype": "Check",
+    "default": "0"
+}
