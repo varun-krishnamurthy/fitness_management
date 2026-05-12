@@ -1,0 +1,148 @@
+{
+	"doctype": "DocType",
+	"name": "Personal Training Package",
+	"module": "Fitness Management",
+	"autoname": "naming_series:",
+	"naming_series": "PKG-.YYYY.-",
+	"title_field": "package_name",
+	"search_fields": "package_name, client_name, trainer_name",
+	"fields": [
+		{
+			"fieldname": "naming_series",
+			"label": "Series",
+			"fieldtype": "Select",
+			"options": "PKG-.YYYY.-",
+			"reqd": 1,
+			"default": "PKG-.YYYY.-"
+		},
+		{
+			"fieldname": "package_name",
+			"label": "Package Name",
+			"fieldtype": "Data",
+			"reqd": 1
+		},
+		{
+			"fieldname": "description",
+			"label": "Description",
+			"fieldtype": "Long Text"
+		},
+		{
+			"fieldname": "duration_months",
+			"label": "Duration (Months)",
+			"fieldtype": "Int",
+			"reqd": 1,
+			"default": 1
+		},
+		{
+			"fieldname": "sessions_per_week",
+			"label": "Sessions Per Week",
+			"fieldtype": "Int",
+			"default": 3
+		},
+		{
+			"fieldname": "price",
+			"label": "Price",
+			"fieldtype": "Currency",
+			"reqd": 1
+		},
+		{
+			"fieldname": "currency",
+			"label": "Currency",
+			"fieldtype": "Link",
+			"options": "Currency",
+			"default": "INR"
+		},
+		{
+			"fieldname": "includes_workout_plan",
+			"label": "Includes Workout Plan",
+			"fieldtype": "Check"
+		},
+		{
+			"fieldname": "includes_diet_plan",
+			"label": "Includes Diet Plan",
+			"fieldtype": "Check"
+		},
+		{
+			"fieldname": "is_active",
+			"label": "Is Active",
+			"fieldtype": "Check",
+			"default": 1
+		},
+		{
+			"fieldname": "trainer",
+			"label": "Trainer",
+			"fieldtype": "Link",
+			"options": "Employee",
+			"reqd": 1,
+			"filters": "[[\"is_fitness_trainer\", \"=\", \"1\"]]"
+		},
+		{
+			"fieldname": "trainer_name",
+			"label": "Trainer Name",
+			"fieldtype": "Data",
+			"read_only": 1,
+			"fetch_from": "trainer.employee_name"
+		},
+		{
+			"fieldname": "client",
+			"label": "Client",
+			"fieldtype": "Link",
+			"options": "Customer",
+			"reqd": 1
+		},
+		{
+			"fieldname": "client_name",
+			"label": "Client Name",
+			"fieldtype": "Data",
+			"read_only": 1,
+			"fetch_from": "customer.customer_name"
+		},
+		{
+			"fieldname": "start_date",
+			"label": "Start Date",
+			"fieldtype": "Date",
+			"reqd": 1,
+			"default": "Today"
+		},
+		{
+			"fieldname": "end_date",
+			"label": "End Date",
+			"fieldtype": "Date",
+			"read_only": 1
+		},
+		{
+			"fieldname": "status",
+			"label": "Status",
+			"fieldtype": "Select",
+			"options": "Draft\nActive\nExpired\nCancelled\nCompleted",
+			"default": "Draft"
+		}
+	],
+	"permissions": [
+		{
+			"role": "System Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 1,
+			"submit": 1,
+			"cancel": 1
+		},
+		{
+			"role": "Fitness Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"submit": 1,
+			"cancel": 1
+		},
+		{
+			"role": "Fitness Trainer",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"submit": 0,
+			"cancel": 0
+		}
+	]
+}

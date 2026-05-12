@@ -1,0 +1,97 @@
+{
+	"doctype": "DocType",
+	"name": "Workout Program",
+	"module": "Fitness Management",
+	"autoname": "naming_series:",
+	"naming_series": "WP-.YYYY.-",
+	"title_field": "program_name",
+	"search_fields": "program_name, trainer_name",
+	"fields": [
+		{
+			"fieldname": "naming_series",
+			"label": "Series",
+			"fieldtype": "Select",
+			"options": "WP-.YYYY.-",
+			"reqd": 1,
+			"default": "WP-.YYYY.-"
+		},
+		{
+			"fieldname": "program_name",
+			"label": "Program Name",
+			"fieldtype": "Data",
+			"reqd": 1
+		},
+		{
+			"fieldname": "description",
+			"label": "Description",
+			"fieldtype": "Long Text"
+		},
+		{
+			"fieldname": "trainer",
+			"label": "Trainer",
+			"fieldtype": "Link",
+			"options": "Employee",
+			"reqd": 1,
+			"filters": "[[\"is_fitness_trainer\", \"=\", \"1\"]]"
+		},
+		{
+			"fieldname": "trainer_name",
+			"label": "Trainer Name",
+			"fieldtype": "Data",
+			"read_only": 1,
+			"fetch_from": "trainer.employee_name"
+		},
+		{
+			"fieldname": "target_muscle_groups",
+			"label": "Target Muscle Groups",
+			"fieldtype": "Multi Select",
+			"options": "Chest\nBack\nLegs\nShoulders\nArms\nCore"
+		},
+		{
+			"fieldname": "difficulty_level",
+			"label": "Difficulty Level",
+			"fieldtype": "Select",
+			"options": "Beginner\nIntermediate\nAdvanced",
+			"default": "Beginner"
+		},
+		{
+			"fieldname": "is_template",
+			"label": "Is Template",
+			"fieldtype": "Check",
+			"default": 0
+		},
+		{
+			"fieldname": "personal_training_package",
+			"label": "Personal Training Package",
+			"fieldtype": "Link",
+			"options": "Personal Training Package"
+		},
+		{
+			"fieldname": "exercises",
+			"label": "Exercises",
+			"fieldtype": "Table",
+			"options": "Exercise Item"
+		}
+	],
+	"permissions": [
+		{
+			"role": "System Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 1
+		},
+		{
+			"role": "Fitness Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1
+		},
+		{
+			"role": "Fitness Trainer",
+			"read": 1,
+			"write": 1,
+			"create": 1
+		}
+	]
+}

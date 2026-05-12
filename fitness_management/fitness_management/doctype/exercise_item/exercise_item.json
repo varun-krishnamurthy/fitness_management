@@ -1,0 +1,43 @@
+{
+	"doctype": "DocType",
+	"name": "Exercise Item",
+	"module": "Fitness Management",
+	"istable": 1,
+	"fields": [
+		{
+			"fieldname": "exercise_name",
+			"label": "Exercise Name",
+			"fieldtype": "Data",
+			"reqd": 1
+		},
+		{
+			"fieldname": "sets",
+			"label": "Sets",
+			"fieldtype": "Int",
+			"reqd": 1
+		},
+		{
+			"fieldname": "reps",
+			"label": "Reps",
+			"fieldtype": "Int",
+			"reqd": 1
+		},
+		{
+			"fieldname": "weight",
+			"label": "Weight (kg)",
+			"fieldtype": "Float",
+			"description": "Weight in kilograms, leave blank for bodyweight exercises"
+		},
+		{
+			"fieldname": "rest_seconds",
+			"label": "Rest Between Sets (seconds)",
+			"fieldtype": "Int",
+			"default": 60
+		},
+		{
+			"fieldname": "notes",
+			"label": "Notes",
+			"fieldtype": "Small Text"
+		}
+	]
+}

@@ -1,0 +1,108 @@
+{
+	"doctype": "DocType",
+	"name": "Diet Plan",
+	"module": "Fitness Management",
+	"autoname": "naming_series:",
+	"naming_series": "DP-.YYYY.-",
+	"title_field": "plan_name",
+	"search_fields": "plan_name, trainer_name",
+	"fields": [
+		{
+			"fieldname": "naming_series",
+			"label": "Series",
+			"fieldtype": "Select",
+			"options": "DP-.YYYY.-",
+			"reqd": 1,
+			"default": "DP-.YYYY.-"
+		},
+		{
+			"fieldname": "plan_name",
+			"label": "Plan Name",
+			"fieldtype": "Data",
+			"reqd": 1
+		},
+		{
+			"fieldname": "description",
+			"label": "Description",
+			"fieldtype": "Long Text"
+		},
+		{
+			"fieldname": "trainer",
+			"label": "Trainer",
+			"fieldtype": "Link",
+			"options": "Employee",
+			"reqd": 1,
+			"filters": "[[\"is_fitness_trainer\", \"=\", \"1\"]]"
+		},
+		{
+			"fieldname": "trainer_name",
+			"label": "Trainer Name",
+			"fieldtype": "Data",
+			"read_only": 1,
+			"fetch_from": "trainer.employee_name"
+		},
+		{
+			"fieldname": "calorie_target",
+			"label": "Daily Calorie Target",
+			"fieldtype": "Int",
+			"default": 2000
+		},
+		{
+			"fieldname": "protein_target_g",
+			"label": "Daily Protein Target (g)",
+			"fieldtype": "Float",
+			"default": 150
+		},
+		{
+			"fieldname": "carb_target_g",
+			"label": "Daily Carbohydrate Target (g)",
+			"fieldtype": "Float",
+			"default": 250
+		},
+		{
+			"fieldname": "fat_target_g",
+			"label": "Daily Fat Target (g)",
+			"fieldtype": "Float",
+			"default": 65
+		},
+		{
+			"fieldname": "is_template",
+			"label": "Is Template",
+			"fieldtype": "Check",
+			"default": 0
+		},
+		{
+			"fieldname": "personal_training_package",
+			"label": "Personal Training Package",
+			"fieldtype": "Link",
+			"options": "Personal Training Package"
+		},
+		{
+			"fieldname": "meals",
+			"label": "Meals",
+			"fieldtype": "Table",
+			"options": "Meal Item"
+		}
+	],
+	"permissions": [
+		{
+			"role": "System Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 1
+		},
+		{
+			"role": "Fitness Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1
+		},
+		{
+			"role": "Fitness Trainer",
+			"read": 1,
+			"write": 1,
+			"create": 1
+		}
+	]
+}

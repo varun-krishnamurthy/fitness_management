@@ -1,0 +1,116 @@
+{
+	"doctype": "DocType",
+	"name": "Workout Session",
+	"module": "Fitness Management",
+	"autoname": "naming_series:",
+	"naming_series": "WS-.YYYY.-",
+	"title_field": "session_date",
+	"search_fields": "session_date, client_name, trainer_name",
+	"fields": [
+		{
+			"fieldname": "naming_series",
+			"label": "Series",
+			"fieldtype": "Select",
+			"options": "WS-.YYYY.-",
+			"reqd": 1,
+			"default": "WS-.YYYY.-"
+		},
+		{
+			"fieldname": "session_date",
+			"label": "Session Date",
+			"fieldtype": "Date",
+			"reqd": 1
+		},
+		{
+			"fieldname": "session_time",
+			"label": "Session Time",
+			"fieldtype": "Time",
+			"reqd": 1
+		},
+		{
+			"fieldname": "client",
+			"label": "Client",
+			"fieldtype": "Link",
+			"options": "Customer",
+			"reqd": 1
+		},
+		{
+			"fieldname": "client_name",
+			"label": "Client Name",
+			"fieldtype": "Data",
+			"read_only": 1,
+			"fetch_from": "customer.customer_name"
+		},
+		{
+			"fieldname": "trainer",
+			"label": "Trainer",
+			"fieldtype": "Link",
+			"options": "Employee",
+			"reqd": 1,
+			"filters": "[[\"is_fitness_trainer\", \"=\", \"1\"]]"
+		},
+		{
+			"fieldname": "trainer_name",
+			"label": "Trainer Name",
+			"fieldtype": "Data",
+			"read_only": 1,
+			"fetch_from": "trainer.employee_name"
+		},
+		{
+			"fieldname": "package",
+			"label": "Personal Training Package",
+			"fieldtype": "Link",
+			"options": "Personal Training Package"
+		},
+		{
+			"fieldname": "workout_program",
+			"label": "Workout Program",
+			"fieldtype": "Link",
+			"options": "Workout Program"
+		},
+		{
+			"fieldname": "exercises_performed",
+			"label": "Exercises Performed",
+			"fieldtype": "Table",
+			"options": "Exercise Log"
+		},
+		{
+			"fieldname": "status",
+			"label": "Status",
+			"fieldtype": "Select",
+			"options": "Planned\nCompleted\nCancelled\nNo Show",
+			"default": "Planned"
+		},
+		{
+			"fieldname": "trainer_notes",
+			"label": "Trainer Notes",
+			"fieldtype": "Long Text"
+		},
+		{
+			"fieldname": "client_feedback",
+			"label": "Client Feedback",
+			"fieldtype": "Small Text"
+		}
+	],
+	"permissions": [
+		{
+			"role": "System Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 1
+		},
+		{
+			"role": "Fitness Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1
+		},
+		{
+			"role": "Fitness Trainer",
+			"read": 1,
+			"write": 1,
+			"create": 1
+		}
+	]
+}
